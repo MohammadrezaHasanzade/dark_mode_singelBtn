@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  transition: all 0.7s ease;
+}
+:root {
+  --background-color: #ffffff;
+  --font-color: #000000;
+  --div-color: #ffffff;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15em;
+  margin-inline: auto;
+  background-image: linear-gradient(rgb(186, 66, 255)) 35%,rgb(0,225, 255);
+  width: 7em;
+  height: 7em;
+  animation: spinning 1s linear infinite;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0px -5px 30px 0px rgb(186, 66, 255),
+  0px 5px 30px 0px rgb(0, 255, 255);
+}
+.container button {
+  border: none;
+  cursor: pointer;
+  background-color: unset;
+  /* filter: blur(10px); */
+}
+.container button img {
+  width: 6em;
+  animation: spinning 1s linear infinite reverse;
+}
+.container .lightMode {
+  display: none;
+}
+.container .darkMode {
+  display: none;
+}
+/* Animiation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.bounce {
+  animation: bounce 0.5s ease-in;
+}
+
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
